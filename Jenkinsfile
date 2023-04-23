@@ -14,14 +14,14 @@ pipeline{
     
     stages{
 
-        // stage('clean the workspac'){
+        stage('check out git'){
 
-        //     steps{
-        //         script{
-        //             cleanWs()
-        //         }
-        //     }
-        // }
+            steps{
+                script{
+                    git branch: 'main', url: 'https://github.com/lavi1205/Devops_Project-4.git'
+                }
+            }
+        }
         stage('Docker build and Push and Delete imgae'){
             steps{
                 script{
